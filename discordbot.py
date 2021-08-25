@@ -23,6 +23,9 @@ async def on_message(message):
     if message.content == "甲賽" :
         await message.reply("好，茯茯甲賽賽 :guraseeyou:")
         return
+    if message.content == "41" :
+        await message.reply("4187 :guraseeyou:")
+        return
 
     if client.user in message.mentions: # @判定
         translator = googletrans.Translator()
