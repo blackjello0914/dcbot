@@ -20,13 +20,13 @@ async def on_message(message):
     # 送信者為Bot時無視
     if message.author.bot:
         return
-    if message.content.contains("甲賽") :
+    if "甲賽" in message.content :
         await message.reply("好，茯茯甲賽賽 :guraseeyou:")
         return
-    if message.content.contains("41") :
+    if "41" in message.content :
         await message.reply("4187 :guraseeyou:")
         return
-    if message.content.contains("A一下") :
+    if "A一下" in message.content :
         await message.reply("哭啊阿元帳號還沒回來 :takesiAngry:")
         return
 
