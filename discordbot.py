@@ -20,7 +20,10 @@ async def on_message(message):
     # 送信者為Bot時無視
     if message.author.bot:
         return
-    
+    if message.content == "123"
+        await message.reply("321")
+        return
+    else
     if client.user in message.mentions: # @判定
         translator = googletrans.Translator()
         robotName = client.user.name
@@ -33,7 +36,6 @@ async def on_message(message):
         if translator.detect(content).lang == SRCLanguage or SRCLanguage == '':
             remessage = translator.translate(content, dest=DSTLanguage).text
             await message.reply(remessage) 
-    elif message.content == "123"
-        await message.reply("321")
+    
 # Bot起動
 client.run(TOKEN)
