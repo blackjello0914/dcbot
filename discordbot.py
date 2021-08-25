@@ -20,7 +20,7 @@ async def on_message(message):
     # 送信者為Bot時無視
     if message.author.bot:
         return
-    if message.content == "甲塞" :
+    if message.content == "甲賽" :
         await message.reply("好，茯茯甲賽賽 :guraseeyou:")
         return
 
