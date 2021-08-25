@@ -24,7 +24,7 @@ async def on_message(message):
         await message.reply("好，茯茯甲賽賽 :guraseeyou:")
         return
     if "41" in message.content :
-        await message.reply("4187 <:oh:>")
+        await message.reply("4187 <a:oh:873174289711525898>")
         return
     if "A一下" in message.content :
         await message.reply("哭啊阿元帳號還沒回來 :takesiAngry:")
