@@ -21,13 +21,13 @@ async def on_message(message):
     if message.author.bot:
         return
     if "甲賽" in message.content :
-        await message.reply("好，茯茯甲賽賽 :guraseeyou:")
+        await message.reply("好，茯茯甲賽賽 <:guraseeyou:873967596582625321>")
         return
     if "41" in message.content :
-        await message.reply("4187 <a:oh:873174289711525898>")
+        await message.reply("4187 <:guraseeyou:873967596582625321>")
         return
     if "A一下" in message.content :
-        await message.reply("哭啊阿元帳號還沒回來 :takesiAngry:")
+        await message.reply("哭啊阿元帳號還沒回來 <a:takesiAngry:875747116247560253>")
         return
 
     if client.user in message.mentions: # @判定
