@@ -23,11 +23,15 @@ async def on_message(message):
     if "甲賽" in message.content :
         await message.reply("好，茯茯甲賽賽 <:guraseeyou:873967596582625321>")
         return
-    if "41" in message.content :
+    if "四一" in message.content or "41" in message.content :
         await message.reply("4187 <:guraseeyou:873967596582625321>")
         return
     if "A一下" in message.content :
         await message.reply("哭啊阿元帳號還沒回來 <a:takesiAngry:875747116247560253>")
+        return
+
+    if "沒屁用" in message.content :
+        await message.reply("你4說老七沒屁用嗎？ <:guraseeyou:873967596582625321>")
         return
 
     if client.user in message.mentions: # @判定
