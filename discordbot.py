@@ -20,10 +20,10 @@ async def on_message(message):
     # 送信者為Bot時無視
     if message.author.bot:
         return
-    if message.content == "123" :
-        await message.reply("321")
+    if message.content == "甲塞" :
+        await message.reply("好，茯茯甲賽賽 :guraseeyou:")
         return
-        
+
     if client.user in message.mentions: # @判定
         translator = googletrans.Translator()
         robotName = client.user.name
