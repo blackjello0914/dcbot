@@ -23,7 +23,7 @@ async def on_message(message):
     if "甲賽" in message.content :
         await message.reply("好，茯茯甲賽賽 <:guraseeyou:873967596582625321>")
         return
-    if "四一" in message.content or "41" in message.content :
+    if "四一" in message.content or "4187" in message.content :
         await message.reply("4187 <:guraseeyou:873967596582625321>")
         return
     if "A一下" in message.content :
