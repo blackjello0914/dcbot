@@ -30,7 +30,7 @@ async def on_ready():
 async def on_message(message):
     msg = message.content
     names = ["茯茯","ㄈㄈ","四一","41","大師","米可","ㄇㄎ","杯杯","老七","米腸","樹人","肉乾","阿元"]
-    nameGroup = {
+        nameGroup = {
         "茯茯": "茯茯",
         "ㄈㄈ": "茯茯",
         "四一": "四一",
@@ -38,7 +38,7 @@ async def on_message(message):
         "米可": "米可",
         "ㄇㄎ": "米可"
     }
-    whoeats = False
+    nameStr = ("|").join(names)
     # 送信者為Bot時無視
     if message.author.bot:
         return
@@ -65,7 +65,7 @@ async def on_message(message):
                 else:
                     eatShitStr += " " + targetList[key] + "也甲賽賽 <:guraseeyou:873967596582625321>"
 
-            await message.reply(eatShitStr)
+            await message.reply("好，" + eatShitStr)
             return
         else:
             await message.reply("娃沒看到說誰，那就還是茯茯甲賽賽吧 <:guraseeyou:873967596582625321>")
