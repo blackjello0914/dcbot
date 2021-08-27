@@ -34,6 +34,12 @@ async def on_message(message):
         await message.reply("你4說老七沒屁用嗎？ <:guraseeyou:873967596582625321>")
         return
 
+    if "無恥" in message.content :
+        await message.reply("你4說老七無恥嗎？ <:guraseeyou:873967596582625321>")
+        return
+
+
+
     if client.user in message.mentions: # @判定
         translator = googletrans.Translator()
         robotName = client.user.name
