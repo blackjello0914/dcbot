@@ -29,23 +29,42 @@ async def on_ready():
 @client.event
 async def on_message(message):
     msg = message.content
-    names = ["茯茯","四一","大師","米可","杯杯","老七","米腸","樹人","肉乾"]
+    names = ["茯茯","ㄈㄈ","四一","41","大師","米可","ㄇㄎ","杯杯","老七","米腸","樹人","肉乾","阿元"]
+    nameGroup = {
+        "茯茯": "茯茯",
+        "ㄈㄈ": "茯茯",
+        "四一": "四一",
+        "41": "四一",
+        "米可": "米可",
+        "ㄇㄎ": "米可"
+    }
     whoeats = False
     # 送信者為Bot時無視
     if message.author.bot:
         return
 
     if "甲賽" in msg :
-        regex = "({})甲賽".format(("|").join(names))
-        eatShitList = re.findall(regex, msg)
+        regex = r"(?=({})({})*(甲賽|也甲賽))".format(nameStr, nameStr)
+        matches = re.finditer(regex, msg)
+        eatShitList = [match.group(1) for match in matches]
 
         if eatShitList:
-            eatShitStr = ""
-            for i in range(0, len(eatShitList)):
-                if i == 0:
-                    eatShitStr += eatShitList[i] + "甲賽賽 <:guraseeyou:873967596582625321>"
+            targetList = {}
+            for name in eatShitList:
+                if name in nameGroup:
+                    targetName = nameGroup[name]
+                    if not targetName in targetList:
+                        targetList[targetName] = name
                 else:
-                    eatShitStr += " " + eatShitList[i] + "也甲賽賽 <:guraseeyou:873967596582625321>"
+                    targetList[name] = name
+
+            eatShitStr = ""
+            for key in targetList:
+                if eatShitStr == "":
+                    eatShitStr += targetList[key] + "甲賽賽 <:guraseeyou:873967596582625321>"
+                else:
+                    eatShitStr += " " + targetList[key] + "也甲賽賽 <:guraseeyou:873967596582625321>"
+
             await message.reply(eatShitStr)
             return
         else:
@@ -72,7 +91,7 @@ async def on_message(message):
         return
     if msg.startswith("!dice"):
         try:
-            await message.reply("隨機1到" + msg[5:] + "，結果：" + random.randint(1,int(msg[5:])))
+            await message.reply("隨機1到" + msg[5:] + "，結果：" + str(random.randint(1,int(msg[5:]))))
         except:
             await message.reply("你妹在那邊亂填")
         return
