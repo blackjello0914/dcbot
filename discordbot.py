@@ -72,7 +72,7 @@ async def on_message(message):
         return
     if msg.startwith("!dice"):
         try:
-            await message.reply(random.randint(1,msg[5:0]))
+            await message.reply(random.randint(1,msg[6:0]))
         except:
             await message.reply("你妹在那邊亂填")
         return
