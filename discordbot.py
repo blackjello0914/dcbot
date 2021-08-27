@@ -32,16 +32,23 @@ async def on_message(message):
     # 送信者為Bot時無視
     if message.author.bot:
         return
+
     if "甲賽" in msg :
-        for word in names :
-            if  word in msg :
-                whoeats = True
-                await message.reply("好，" + word + "甲賽賽 <:guraseeyou:873967596582625321>")
-                return
-        if not whoeats :
+        regex = "({})甲賽".format(("|").join(names))
+        eatShitList = re.findall(regex, msg)
+
+        if eatShitList:
+            eatShitStr = ""
+            for i in range(0, len(eatShitList)):
+                if i == 0:
+                    eatShitStr += eatShitList[i] + "甲賽賽 <:guraseeyou:873967596582625321>"
+                else:
+                    eatShitStr += " " + eatShitList[i] + "也甲賽賽 <:guraseeyou:873967596582625321>"
+            await message.reply(eatShitStr)
+            return
+        else:
             await message.reply("娃沒看到說誰，那就還是茯茯甲賽賽吧 <:guraseeyou:873967596582625321>")
             return
-            
 
     if "四一" in msg or "4187" in msg :
         await message.reply("4187 <:guraseeyou:873967596582625321>")
