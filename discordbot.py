@@ -31,11 +31,12 @@ async def on_message(message):
     # 送信者為Bot時無視
     if message.author.bot:
         return
-    if "甲賽" in msg :
-        for word in names:
-            if  word in msg :
-                await message.reply("好，" + word + "甲賽賽 <:guraseeyou:873967596582625321>")
-                return
+    # if "甲賽" in msg :
+    #     for word in names:
+    #         if  word in msg :
+    #             await message.reply("好，" + word + "甲賽賽 <:guraseeyou:873967596582625321>")
+    #             return
+
     if "四一" in msg or "4187" in msg :
         await message.reply("4187 <:guraseeyou:873967596582625321>")
         return
