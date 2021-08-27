@@ -27,15 +27,21 @@ async def on_ready():
 @client.event
 async def on_message(message):
     msg = message.content
-    names = ["茯茯","四一","大師","米可","杯杯","老七"]
+    names = ["茯茯","四一","大師","米可","杯杯","老七","米腸","樹人","肉乾"]
+    whoeats = False
     # 送信者為Bot時無視
     if message.author.bot:
         return
     if "甲賽" in msg :
-        for word in names:
+        for word in names :
             if  word in msg :
+                whoeats = True
                 await message.reply("好，" + word + "甲賽賽 <:guraseeyou:873967596582625321>")
                 return
+        if not whoeats :
+            await message.reply("娃沒看到說誰，那就還是茯茯甲賽賽吧 <:guraseeyou:873967596582625321>")
+            return
+            
 
     if "四一" in msg or "4187" in msg :
         await message.reply("4187 <:guraseeyou:873967596582625321>")
