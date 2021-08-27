@@ -1,6 +1,9 @@
 import discord
 import googletrans
 import os
+import json
+import requests
+
 from pprint import pprint
 # 輸入自己Bot的TOKEN碼
 TOKEN = os.environ['TOKEN']
@@ -8,6 +11,12 @@ SRCLanguage=os.environ['SRC']
 DSTLanguage=os.environ['DST']
 
 client = discord.Client()
+
+def get_quote():
+    response = requests.get("https://zenquotes.io/api/random")
+    json_data = json.loads(response.text);
+    quote = json_data[0]["q"] + " -" +json_data[0]["a"]
+    return(quote)
 
 # 起動時呼叫
 @client.event
@@ -37,6 +46,9 @@ async def on_message(message):
         return
     if message.content.startswith("!古戰") :
         await message.reply("火古9/8~9/15 風古11月初 <:guraseeyou:873967596582625321>")
+        return
+    if message.content.startswith("!隨便講點啥") :
+        await message.reply(get_quote() + "<:guraseeyou:873967596582625321>")
         return
 
 
