@@ -35,7 +35,7 @@ async def on_message(message):
     if "無恥" in message.content :
         await message.reply("你4說老七無恥嗎？ <:guraseeyou:873967596582625321>")
         return
-    if message.content.startwith("!古戰") :
+    if message.content.startswith("!古戰") :
         await message.reply("火古9/8~9/15 風古11月初 <:guraseeyou:873967596582625321>")
         return
 
