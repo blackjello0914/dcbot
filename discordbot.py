@@ -4,6 +4,7 @@ import os
 import json
 import requests
 import re
+import random
 
 from pprint import pprint
 # 輸入自己Bot的TOKEN碼
@@ -69,7 +70,12 @@ async def on_message(message):
     if msg.startswith("!隨便講點啥") :
         await message.reply(get_quote() + "<:guraseeyou:873967596582625321>")
         return
-
+    if msg.startwith("!dice"):
+        try:
+            await message.reply(random.randint(1,msg[5:0]))
+        except:
+            await message.reply("你妹在那邊亂填")
+        return
 
     if client.user in message.mentions: # @判定
         translator = googletrans.Translator()
