@@ -30,7 +30,7 @@ async def on_ready():
 async def on_message(message):
     msg = message.content
     names = ["茯茯","ㄈㄈ","四一","41","大師","米可","ㄇㄎ","杯杯","老七","米腸","樹人","肉乾","阿元"]
-        nameGroup = {
+    nameGroup = {
         "茯茯": "茯茯",
         "ㄈㄈ": "茯茯",
         "四一": "四一",
