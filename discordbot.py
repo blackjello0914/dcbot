@@ -1,8 +1,8 @@
 import discord
 import googletrans
 import os
-import json
-import requests
+# import json
+# import requests
 
 from pprint import pprint
 # 輸入自己Bot的TOKEN碼
