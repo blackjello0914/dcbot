@@ -29,15 +29,15 @@ async def on_message(message):
     if "A一下" in message.content :
         await message.reply("哭啊阿元帳號還沒回來 <a:takesiAngry:875747116247560253>")
         return
-
     if "沒屁用" in message.content :
         await message.reply("你4說老七沒屁用嗎？ <:guraseeyou:873967596582625321>")
         return
-
     if "無恥" in message.content :
         await message.reply("你4說老七無恥嗎？ <:guraseeyou:873967596582625321>")
         return
-
+    if message.content.startwith("!古戰") :
+        await message.reply("火古9/8~9/15 風古11月初 <:guraseeyou:873967596582625321>")
+        return
 
 
     if client.user in message.mentions: # @判定
