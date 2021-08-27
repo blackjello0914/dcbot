@@ -70,7 +70,7 @@ async def on_message(message):
     if msg.startswith("!隨便講點啥") :
         await message.reply(get_quote() + "<:guraseeyou:873967596582625321>")
         return
-    if msg.startwith("!dice"):
+    if msg.startswith("!dice"):
         try:
             await message.reply(random.randint(1,int(msg[5:])))
         except:
