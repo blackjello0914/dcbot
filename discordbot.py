@@ -29,7 +29,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     msg = message.content
-    names = ["茯茯","ㄈㄈ","四一","41","大師","米可","ㄇㄎ","杯杯","老七","米腸","樹人","肉乾","阿元","球球"]
+    names = ["茯茯","ㄈㄈ","四一","41","大師","米可","ㄇㄎ","杯杯","老七","米腸","樹人","肉乾","阿元","球球","L宇"]
     nameGroup = {
         "茯茯": "茯茯",
         "ㄈㄈ": "茯茯",
@@ -38,7 +38,8 @@ async def on_message(message):
         "米可": "米可",
         "ㄇㄎ": "米可",
         "球": "球球",
-        "ball": "球球"
+        "ball": "球球",
+        "流羽": "L宇"
     }
     nameStr = ("|").join(names)
     # 送信者為Bot時無視
