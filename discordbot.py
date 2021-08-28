@@ -78,7 +78,7 @@ async def on_message(message):
             await message.reply("好，" + eatShitStr)
             return
         else:
-            await message.reply("娃沒看到說誰，那就還是茯茯甲賽賽吧 <:guraseeyou:873967596582625321>"+msg
+            await message.reply("娃沒看到說誰，那就還是茯茯甲賽賽吧 <:guraseeyou:873967596582625321>"+msg)
             return
 
     if "四一" in msg or "4187" in msg :
