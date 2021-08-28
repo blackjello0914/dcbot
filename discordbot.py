@@ -52,7 +52,7 @@ async def on_message(message):
     # 送信者為Bot時無視
     if message.author.bot:
         return
-    msg = str(message.mentions[0].name)+msg
+    # msg = str(message.mentions[0].name)+msg
     if "甲賽" in msg or "吃屎" in msg :
         regex = r"(?=({})({})*(甲賽|也甲賽))".format(nameStr, nameStr)
         matches = re.finditer(regex, msg)
@@ -78,7 +78,7 @@ async def on_message(message):
             await message.reply("好，" + eatShitStr)
             return
         else:
-            await message.reply("娃沒看到說誰，那就還是茯茯甲賽賽吧 <:guraseeyou:873967596582625321>"+msg)
+            await message.reply("娃沒看到說誰，那就還是茯茯甲賽賽吧 <:guraseeyou:873967596582625321>")
             return
 
     if "四一" in msg or "4187" in msg :
