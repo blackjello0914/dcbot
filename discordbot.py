@@ -52,7 +52,7 @@ async def on_message(message):
     # 送信者為Bot時無視
     if message.author.bot:
         return
-    msg = msg+str(message.author)
+    msg = msg+str(message.mentions)
     if "甲賽" in msg or "吃屎" in msg :
         regex = r"(?=({})({})*(甲賽|也甲賽))".format(nameStr, nameStr)
         matches = re.finditer(regex, msg)
