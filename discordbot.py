@@ -31,6 +31,7 @@ async def on_message(message):
     msg = message.content
     names = ["茯茯","ㄈㄈ","四一","41","大師","米可","ㄇㄎ","杯杯","老七","米腸","樹人","肉乾","阿元","球球","L宇"]
     nameGroup = {
+        "Welkin": "茯茯",
         "茯茯": "茯茯",
         "ㄈㄈ": "茯茯",
         "四一": "四一",
@@ -39,7 +40,13 @@ async def on_message(message):
         "ㄇㄎ": "米可",
         "球": "球球",
         "ball": "球球",
-        "流羽": "L宇"
+        "流羽": "L宇",
+        "Black13":"L宇",
+        "玩什麼都神就是沒裝":"大師",
+        "酒杯":"杯杯",
+        "z99725238":"米腸",
+        "樂悠魔":"樹人",
+        "Blackjello":"阿元"
     }
     nameStr = ("|").join(names)
     # 送信者為Bot時無視
