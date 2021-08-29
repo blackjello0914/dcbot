@@ -54,7 +54,7 @@ async def on_message(message):
         return
     # msg = str(message.mentions[0].name)+msg
     if "甲賽" in msg or "吃屎" in msg or "好帥" in msg :
-        regex = r"(?=({})({})*(甲賽|也甲賽))".format(nameStr, nameStr)
+        regex = r"(?=({})({})*(甲賽|也甲賽|好帥))".format(nameStr, nameStr)
         matches = re.finditer(regex, msg)
         eatShitList = [match.group(1) for match in matches]
 
