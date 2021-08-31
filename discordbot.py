@@ -124,5 +124,9 @@ async def on_message(message):
             await message.reply("他就爛 <:shibahehe:881814045848666144>")
         return
     
+    if msg.startswith("!testbot") :
+        await message.reply(str(message))
+        return
+    
 # Bot起動
 client.run(TOKEN)
