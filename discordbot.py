@@ -119,5 +119,10 @@ async def on_message(message):
             remessage = translator.translate(content, dest=DSTLanguage).text
             await message.reply(remessage) 
     
+    if(message.mentions):
+        if "好爛" in msg :
+            await message.reply("他就爛 <:shibahehe:881814045848666144>")
+        return
+    
 # Bot起動
 client.run(TOKEN)
