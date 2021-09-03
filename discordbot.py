@@ -81,6 +81,34 @@ async def on_message(message):
             await message.reply("娃沒看到說誰，那就還是茯茯甲賽賽吧 <:guraseeyou:873967596582625321>")
             return
 
+    if "在戳" in msg or "死戳仔" in msg :
+        regex = r"(?=({})({})*(在戳|死戳仔))".format(nameStr, nameStr)
+        matches = re.finditer(regex, msg)
+        eatShitList = [match.group(1) for match in matches]
+
+        if eatShitList:
+            targetList = {}
+            for name in eatShitList:
+                if name in nameGroup:
+                    targetName = nameGroup[name]
+                    if not targetName in targetList:
+                        targetList[targetName] = name
+                else:
+                    targetList[name] = name
+
+            eatShitStr = ""
+            for key in targetList:
+                if eatShitStr == "":
+                    eatShitStr += targetList[key] + "死戳仔 轉守為攻<a:takesiAngry:875747116247560253>"
+                else:
+                    eatShitStr += "，啊" + targetList[key] + "也在戳 <a:takesiAngry:875747116247560253>"
+
+            await message.reply("哭啊，" + eatShitStr)
+            return
+        else:
+            await message.reply("哪個北七在戳，484杯杯 <:guraseeyou:873967596582625321>")
+            return
+
     if "四一" in msg or "4187" in msg :
         await message.reply("4187 <:guraseeyou:873967596582625321>")
         return
