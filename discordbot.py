@@ -116,8 +116,8 @@ async def on_message(message):
                 if resp.status != 200:
                     return await message.channel.send('Could not download file...')
                 data = io.BytesIO(await resp.read())
-                await message.channel.send(file=discord.File(data, 'unknown.png'))
-        await message.reply("哭啊")
+                await message.channel.send("再拆丫<a:takesiAngry:875747116247560253>", file=discord.File(data, 'unknown.png'))
+        # await message.reply("哭啊")
         return
     if "四一" in msg or "4187" in msg :
         await message.reply("4187 <:guraseeyou:873967596582625321>")
