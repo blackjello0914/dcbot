@@ -132,7 +132,12 @@ async def on_message(message):
         await message.reply("你4說老七無恥嗎？ <:guraseeyou:873967596582625321>")
         return
     if msg.startswith("!古戰") :
-        await message.reply("火古9/8~9/15 風古11月初 <:guraseeyou:873967596582625321>")
+        async with aiohttp.ClientSession() as session:
+            async with session.get("https://images-ext-1.discordapp.net/external/pZqBuyrtMkvwPvKADilDk_P-2CxvKkptXB4o1TfJICo/%3Fformat%3Djpg%26name%3Dsmall/https/pbs.twimg.com/media/E_VbP3IVEAYHlU9") as resp:
+                if resp.status != 200:
+                    return await message.channel.send('Could not download file...')
+                data = io.BytesIO(await resp.read())
+                await message.channel.send("<:guraseeyou:873967596582625321>", file=discord.File(data, 'unknown.png'))
         return
     if msg.startswith("!隨便講點啥") :
         await message.reply(get_quote() + "<:guraseeyou:873967596582625321>")
