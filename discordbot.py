@@ -5,6 +5,8 @@ import json
 import requests
 import re
 import random
+import io
+import aiohttp
 
 from pprint import pprint
 # 輸入自己Bot的TOKEN碼
@@ -109,7 +111,14 @@ async def on_message(message):
             await message.reply("哪個北七在戳，484杯杯 <:guraseeyou:873967596582625321>")
             return
     if "拆丼" in msg or "拆井" in msg :
-        await message.channel.send(file=discord.File('./chai.png'))
+        await message.reply("哭啊")
+        await message.reply(file=discord.File('./chai.png'))
+        async with aiohttp.ClientSession() as session:
+            async with session.get("https://media.discordapp.net/attachments/873135014676664354/889125450633343006/unknown.png") as resp:
+                if resp.status != 200:
+                    return await message.channel.send('Could not download file...')
+                data = io.BytesIO(await resp.read())
+                await message.channel.send(file=discord.File(data, 'unknown.png'))
         return
     if "四一" in msg or "4187" in msg :
         await message.reply("4187 <:guraseeyou:873967596582625321>")
