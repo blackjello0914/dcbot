@@ -108,7 +108,9 @@ async def on_message(message):
         else:
             await message.reply("哪個北七在戳，484杯杯 <:guraseeyou:873967596582625321>")
             return
-
+    if "拆丼" in msg or "拆井" in msg :
+        await message.reply("https://media.discordapp.net/attachments/873135014676664354/889125450633343006/unknown.png")
+        return
     if "四一" in msg or "4187" in msg :
         await message.reply("4187 <:guraseeyou:873967596582625321>")
         return
