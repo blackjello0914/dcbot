@@ -131,14 +131,14 @@ async def on_message(message):
     if "無恥" in msg :
         await message.reply("你4說老七無恥嗎？ <:guraseeyou:873967596582625321>")
         return
-    # if msg.startswith("!古戰") or msg.startswith("！古戰") :
-    #     async with aiohttp.ClientSession() as session:
-    #         async with session.get("https://media.discordapp.net/attachments/873135014676664354/889139922647269376/321.png") as resp:
-    #             if resp.status != 200:
-    #                 return await message.channel.send('Could not download file...')
-    #             data = io.BytesIO(await resp.read())
-    #             await message.channel.send("<:guraseeyou:873967596582625321>", file=discord.File(data, '321.png'))
-    #     return
+    if msg.startswith("!古戰") or msg.startswith("！古戰") :
+        async with aiohttp.ClientSession() as session:
+            async with session.get("https://media.discordapp.net/attachments/873135014676664354/889139922647269376/321.png") as resp:
+                if resp.status != 200:
+                    return await message.channel.send('Could not download file...')
+                data = io.BytesIO(await resp.read())
+                await message.channel.send("<:guraseeyou:873967596582625321>,哭啊不想更新", file=discord.File(data, '321.png'))
+        return
     if msg.startswith("!隨便講點啥") :
         await message.reply(get_quote() + "<:guraseeyou:873967596582625321>")
         return
@@ -170,6 +170,11 @@ async def on_message(message):
     if msg.startswith("!testbot") :
         await message.reply(str(message))
         return
-    
+
+# 收到反應時呼叫
+@client.event
+async def on_reaction_add(self, reaction: discord.Reaction, user):
+    await reaction.channel.send(str(reaction))
+    await reaction.channel.send(str(user))
 # Bot起動
 client.run(TOKEN)
