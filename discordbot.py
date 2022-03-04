@@ -176,6 +176,7 @@ async def on_message(message):
 # 收到反應時呼叫
 @Client.event
 async def on_reaction_add(self, reaction:discord.Reaction, user:discord.User):
+    await reaction.message.channel.send("123")
     await reaction.message.channel.send(str(reaction))
 
 # Bot起動
