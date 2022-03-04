@@ -15,9 +15,6 @@ TOKEN = os.environ['TOKEN']
 SRCLanguage=os.environ['SRC']
 DSTLanguage=os.environ['DST']
 
-DATA_PATH = os.path.join("data", "SML-Cogs", "togglerole")
-SETTINGS_JSON = os.path.join(DATA_PATH, "settings.json")
-
 client = discord.Client()
 
 def get_quote():
@@ -177,8 +174,8 @@ async def on_message(message):
 
 # 收到反應時呼叫
 @commands.Cog.listener()
-async def on_raw_reaction_add(self, payload: discord.RawReactionActionEvent):
-    await payload.message.channel.send(str(payload))
+async def on_reaction_add(self, reaction:discord.Reaction, user:discord.User):
+    await reaction.message.channel.send(str(reaction))
 
 # Bot起動
 client.run(TOKEN)
