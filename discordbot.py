@@ -1,20 +1,20 @@
-from cgitb import enable
-from email import message
-from multiprocessing.connection import Client
-from pickle import TRUE
+# from cgitb import enable
+# from email import message
+# from multiprocessing.connection import Client
+# from pickle import TRUE
 
-import googletrans
-import requests
-from tokenize import Token
+# import googletrans
+# import requests
+# from tokenize import Token
 from distutils import extension
 from re import A
 import discord
 import os
-import re
-import random
-import io
-import aiohttp
-import asyncio
+# import re
+# import random
+# import io
+# import aiohttp
+# import asyncio
 
 import json
 with open('setting.json', mode='r', encoding='utf8') as jfile:
@@ -24,9 +24,9 @@ from pprint import pprint
 from discord.ext import commands
 # 輸入自己Bot的TOKEN碼***因為git是公開的，所以要放上服務器用就要服務器上的儲存方式，不然會被discord禁用token~~
 # 正式版使用os.environ['TOKEN']
-TOKEN = os.environ['TOKEN']
+# TOKEN = os.environ['TOKEN']
 # 本地測試可以用這個↓↓
-# TOKEN = jdata["token"]
+TOKEN = jdata["token"]
 
 # google翻譯功能的參數
 # SRCLanguage=os.environ['SRC']
