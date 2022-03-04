@@ -1,4 +1,7 @@
+from cgitb import enable
+from email import message
 from multiprocessing.connection import Client
+from pickle import TRUE
 import discord
 import googletrans
 import os
@@ -181,6 +184,6 @@ async def on_message(message):
 async def on_reaction_add(self, reaction:discord.Reaction, user:discord.User):
     await reaction.message.channel.send("123")
     await reaction.message.channel.send(str(reaction))
-
+client.intents.reactions = True
 # Bot起動
 client.run(TOKEN)
