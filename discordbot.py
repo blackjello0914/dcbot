@@ -110,35 +110,35 @@ async def on_message(message):
         else:
             await message.reply("哪個北七在戳，484杯杯 <:guraseeyou:873967596582625321>")
             return
-    if "拆丼" in msg or "拆井" in msg :
-        async with aiohttp.ClientSession() as session:
-            async with session.get("https://media.discordapp.net/attachments/873135014676664354/889125450633343006/unknown.png") as resp:
-                if resp.status != 200:
-                    return await message.channel.send('Could not download file...')
-                data = io.BytesIO(await resp.read())
-                await message.channel.send("再拆丫<a:takesiAngry:875747116247560253>", file=discord.File(data, 'unknown.png'))
-        # await message.reply("哭啊")
-        return
-    if "四一" in msg or "4187" in msg :
-        await message.reply("4187 <:guraseeyou:873967596582625321>")
-        return
-    if "A一下" in msg :
-        await message.reply("哭啊阿元帳號還沒回來 <a:takesiAngry:875747116247560253>")
-        return
+    # if "拆丼" in msg or "拆井" in msg :
+    #     async with aiohttp.ClientSession() as session:
+    #         async with session.get("https://media.discordapp.net/attachments/873135014676664354/889125450633343006/unknown.png") as resp:
+    #             if resp.status != 200:
+    #                 return await message.channel.send('Could not download file...')
+    #             data = io.BytesIO(await resp.read())
+    #             await message.channel.send("再拆丫<a:takesiAngry:875747116247560253>", file=discord.File(data, 'unknown.png'))
+    #     # await message.reply("哭啊")
+    #     return
+    # if "四一" in msg or "4187" in msg :
+    #     await message.reply("4187 <:guraseeyou:873967596582625321>")
+    #     return
+    # if "A一下" in msg :
+    #     await message.reply("哭啊阿元帳號還沒回來 <a:takesiAngry:875747116247560253>")
+    #     return
     if "沒屁用" in msg :
         await message.reply("你4說老七沒屁用嗎？ <:guraseeyou:873967596582625321>")
         return
     if "無恥" in msg :
         await message.reply("你4說老七無恥嗎？ <:guraseeyou:873967596582625321>")
         return
-    if msg.startswith("!古戰") or msg.startswith("！古戰") :
-        async with aiohttp.ClientSession() as session:
-            async with session.get("https://media.discordapp.net/attachments/873135014676664354/889139922647269376/321.png") as resp:
-                if resp.status != 200:
-                    return await message.channel.send('Could not download file...')
-                data = io.BytesIO(await resp.read())
-                await message.channel.send("<:guraseeyou:873967596582625321>", file=discord.File(data, '321.png'))
-        return
+    # if msg.startswith("!古戰") or msg.startswith("！古戰") :
+    #     async with aiohttp.ClientSession() as session:
+    #         async with session.get("https://media.discordapp.net/attachments/873135014676664354/889139922647269376/321.png") as resp:
+    #             if resp.status != 200:
+    #                 return await message.channel.send('Could not download file...')
+    #             data = io.BytesIO(await resp.read())
+    #             await message.channel.send("<:guraseeyou:873967596582625321>", file=discord.File(data, '321.png'))
+    #     return
     if msg.startswith("!隨便講點啥") :
         await message.reply(get_quote() + "<:guraseeyou:873967596582625321>")
         return
