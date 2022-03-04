@@ -1,3 +1,4 @@
+from multiprocessing.connection import Client
 import discord
 import googletrans
 import os
@@ -173,7 +174,7 @@ async def on_message(message):
         return
 
 # 收到反應時呼叫
-@commands.Cog.listener()
+@Client.event
 async def on_reaction_add(self, reaction:discord.Reaction, user:discord.User):
     await reaction.message.channel.send(str(reaction))
 
