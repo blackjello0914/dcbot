@@ -9,6 +9,7 @@ import io
 import aiohttp
 
 from pprint import pprint
+from discord.ext import commands
 # 輸入自己Bot的TOKEN碼
 TOKEN = os.environ['TOKEN']
 SRCLanguage=os.environ['SRC']
@@ -175,7 +176,7 @@ async def on_message(message):
         return
 
 # 收到反應時呼叫
-@client.event
+@commands.Cog.listener()
 async def on_raw_reaction_add(self, payload: discord.RawReactionActionEvent):
     await payload.message.channel.send(str(payload))
 
