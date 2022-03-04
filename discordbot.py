@@ -8,6 +8,7 @@ import re
 import random
 import io
 import aiohttp
+import asyncio
 
 from pprint import pprint
 from discord.ext import commands
@@ -121,9 +122,11 @@ async def on_message(message):
     #             await message.channel.send("再拆丫<a:takesiAngry:875747116247560253>", file=discord.File(data, 'unknown.png'))
     #     # await message.reply("哭啊")
     #     return
-    # if "四一" in msg or "4187" in msg :
-    #     await message.reply("4187 <:guraseeyou:873967596582625321>")
-    #     return
+    if "四一" in msg or "4187" in msg :
+        tmpmsg = await message.reply("4187 <:guraseeyou:873967596582625321>")
+        await asyncio.sleep(3)
+        await tmpmsg.delete()
+        return
     # if "A一下" in msg :
     #     await message.reply("哭啊阿元帳號還沒回來 <a:takesiAngry:875747116247560253>")
     #     return
