@@ -22,8 +22,12 @@ with open('setting.json', mode='r', encoding='utf8') as jfile:
 
 from pprint import pprint
 from discord.ext import commands
-# 輸入自己Bot的TOKEN碼
-# TOKEN = os.environ['TOKEN']
+# 輸入自己Bot的TOKEN碼***因為git是公開的，所以要放上服務器用就要服務器上的儲存方式，不然會被discord禁用token~~
+# 正式版使用os.environ['TOKEN']
+TOKEN = os.environ['TOKEN']
+# 本地測試可以用這個↓↓
+# TOKEN = jdata["token"]
+
 # google翻譯功能的參數
 # SRCLanguage=os.environ['SRC']
 # DSTLanguage=os.environ['DST']
@@ -217,4 +221,4 @@ for filename in os.listdir('./cmds'):
 
 
 # Bot起動
-bot.run(jdata["token"])
+bot.run(TOKEN)
